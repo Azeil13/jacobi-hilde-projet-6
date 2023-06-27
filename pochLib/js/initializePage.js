@@ -18,6 +18,7 @@ function initializePage() {
   function showSearchForm() {
     // Implement your code to show the search form here
     // This function will be called when the "Add book" button is clicked
+    console.log("nous recherchons un livre" )
   }
   
   // Function to get registered books

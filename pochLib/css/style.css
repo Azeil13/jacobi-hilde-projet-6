@@ -3,13 +3,13 @@
     font-size: 1em;
 }
 
-.h2 {
-    color: black;
+h2 {
+    color:red;
     font-size: 1em;
 }
 
 
-body {
+.body {
     font-family: "Crete Round", serif;
     background-color: #f0f0f0;
   }

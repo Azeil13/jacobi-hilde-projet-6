@@ -9,7 +9,7 @@ const myBooks = document.getElementById('myBooks');
 const logoImg = document.createElement('img');
 
 // Définition des attributs de l'élément <img>
-logoImg.setAttribute('src', 'images/logo.png');
+logoImg.setAttribute('src', 'asset/images/logo.png');
 logoImg.setAttribute('alt', 'Logo La Plume enchantée');
 
 // Ajout de l'élément <img> au début de la <div>
