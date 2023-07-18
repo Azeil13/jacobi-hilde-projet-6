@@ -7,6 +7,5 @@ const logoImg = document.createElement('img');
 // Définition des attributs de l'élément <img>
 logoImg.setAttribute('src', 'pochLib/asset/images/logo.png');
 logoImg.setAttribute('alt', 'Logo La Plume enchantée');
-
+logoImg.id="logo";
 // Ajout de l'élément <img> au début de la <div>
-myBooksDiv.prepend(logoImg);
