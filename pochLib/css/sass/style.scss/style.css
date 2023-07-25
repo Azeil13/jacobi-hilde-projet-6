@@ -1,0 +1,96 @@
+#logo {
+  max-height: 114px;
+}
+
+.title {
+  color: black;
+  font-size: 1.05em;
+  text-align: center;
+  background-color: #C0C0C0; /* Set background color to silver */
+  font-family: "Roboto", sans-serif;
+  border-style: ridge;
+  font-weight: normal;
+}
+
+.btn_add {
+  /* Set buttonn with the text " Aouter un livre " background color to green */
+  background-color: #247256; /* Set background color to green */
+  color: white; /* Set text color to white */
+  margin: auto;
+  display: block;
+}
+
+.input_search {
+  width: 98%;
+  box-sizing: border-box;
+}
+
+#btn_cancel {
+  background-color: red;
+  color: white;
+}
+
+.h2 {
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.body {
+  background-color: black;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+#content h2 {
+  /* to modify the style of the sentence "Ma poch'liste" that is in the div tag <div id="content"> */
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+#content h2, #content p {
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#content p {
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#content button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block; /* Change from "inline-block" to "block" so taking up the entire width of its container */
+  margin: 0 auto; /* Set top and bottom margin to 0 and horizontal margin to auto so centers the button using auto margins */
+  font-size: 16px;
+  cursor: pointer;
+  padding: 14px 40px;
+}
+
+button[type=submit],
+button.add-book {
+  background-color: #247256; /* Set background color to green */
+  color: white; /* Set text color to white */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  body {
+    background-color: white;
+  }
+}
+/* Media Query for low-resolution Tablets, iPads */
+@media (min-width: 481px) and (max-width: 767px) {
+  body {
+    background-color: white;
+  }
+}/*# sourceMappingURL=style.css.map */
