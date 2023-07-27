@@ -10,10 +10,11 @@ function initializePage() {
   parentNodeHr.insertBefore(addButton,hr);  // inserts the addButton element ( that is the button with the text  "Ajouter un livre") before the hr element within the parentNodeHr. => so  addButton will be positioned just before the horizontal rule (<hr>).
 }
 
+
 // Function to show the search form
 function showSearchForm() {
   const addButton = document.getElementById("buttonAddBook"); // get button by id with content "Ajouter un livre"
-  addButton.remove();  // remove button with content " Ajouter un livre"
+  addButton.remove();  // remove button with content " Ajouter un livre" from form
  
   // Implement your code to show the search form here
   // This function will be called when the "Add book" button is clicked
@@ -44,7 +45,7 @@ function showSearchForm() {
   
     const searchButton = document.createElement("button");
     searchButton.textContent = "Rechercher";
-   
+    searchButton.classList.add("btn_search"); // add  class "btn_search" to addButton element (the button with the text  "Rechercher".) 
   
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "Annuler";
