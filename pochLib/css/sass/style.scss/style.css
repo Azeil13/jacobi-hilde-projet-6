@@ -12,7 +12,7 @@
   font-weight: normal;
 }
 
-.btn_add {
+.btn_add { /* adds class "btn_add" to addButton element (the button with the text  "Ajouter un livre".)*/
   /* Set buttonn with the text " Aouter un livre " background color to green */
   background-color: #247256; /* Set background color to green */
   color: white; /* Set text color to white */
@@ -20,12 +20,12 @@
   display: block;
 }
 
-.input_search {
+.input_search { /* adds class "input_search"*/
   width: 98%;
   box-sizing: border-box;
 }
 
-#btn_cancel {
+.btn_cancel { /* adds class "btn_cancel"*/
   background-color: red;
   color: white;
 }
@@ -42,38 +42,6 @@
   background-color: black;
   text-align: center;
   font-family: "Roboto", sans-serif;
-}
-
-#content h2 {
-  /* to modify the style of the sentence "Ma poch'liste" that is in the div tag <div id="content"> */
-  color: black;
-  font-size: 1em;
-  text-align: center;
-  font-weight: bold;
-  font-family: "Roboto", sans-serif;
-}
-#content h2, #content p {
-  color: black;
-  font-size: 1em;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-}
-#content p {
-  color: black;
-  font-size: 1em;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-}
-#content button {
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: block; /* Change from "inline-block" to "block" so taking up the entire width of its container */
-  margin: 0 auto; /* Set top and bottom margin to 0 and horizontal margin to auto so centers the button using auto margins */
-  font-size: 16px;
-  cursor: pointer;
-  padding: 14px 40px;
 }
 
 button[type=submit],

@@ -1,6 +1,7 @@
 // Function to initialize the page
 function initializePage() {
   const addButton = document.createElement("button");
+  addButton.id= "buttonAddBook";
   addButton.textContent = "Ajouter un livre";
   addButton.addEventListener("click", showSearchForm);
   addButton.classList.add("btn_add");  // adds CSS class "btn_add" to addButton element (the button with the text  "Ajouter un livre".) 
@@ -11,6 +12,9 @@ function initializePage() {
 
 // Function to show the search form
 function showSearchForm() {
+  const addButton = document.getElementById("buttonAddBook"); // get button by id with content "Ajouter un livre"
+  addButton.remove();  // remove button with content " Ajouter un livre"
+ 
   // Implement your code to show the search form here
   // This function will be called when the "Add book" button is clicked
     const contentDiv = document.getElementById("content");
@@ -44,8 +48,10 @@ function showSearchForm() {
   
     const cancelButton = document.createElement("button");
     cancelButton.textContent = "Annuler";
-    
-    
+    cancelButton.classList.add("btn_cancel");  // add  class "btn_cancel" to addButton element (the button with the text  "Annuler".) 
+  
+
+
   
     
 
