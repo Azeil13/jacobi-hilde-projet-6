@@ -5,9 +5,20 @@ function initializePage() {
   addButton.textContent = "Ajouter un livre";
   addButton.addEventListener("click", showSearchForm);
   addButton.classList.add("btn_add");  // adds CSS class "btn_add" to addButton element (the button with the text  "Ajouter un livre".) 
+  
   const hr = document.querySelector("hr"); //This line selects the first <hr> element in the document and stores it in the variable hr. The <hr> tag in HTML index.html file represents an horizontal rule on the webpage, used it for visual separation.
   const parentNodeHr= hr.parentElement;  //  retrieves the parent element of the <hr> element and assigns it to the variable parentNodeHr. 
   parentNodeHr.insertBefore(addButton,hr);  // inserts the addButton element ( that is the button with the text  "Ajouter un livre") before the hr element within the parentNodeHr. => so  addButton will be positioned just before the horizontal rule (<hr>).
+
+
+  // With this modification, the class "poch-list" will be added to the h2 element with the text "Ma poch'liste" whenever the initializePage() function is called.
+   // Add the "poch-list" class to the h2 element with the text "Ma poch'liste"
+  const h2Elements = document.querySelectorAll("h2"); //use document.querySelectorAll("h2") to select all the h2 elements on the page
+  h2Elements.forEach((h2Element) => {     // we loop through these elements using forEach()
+   if (h2Element.textContent === "Ma poch'liste") {    //check if the textContent of each h2 element is equal to "Ma poch'liste"
+     h2Element.classList.add("poch-list");  // If a match is found, we add the "poch-list" class to that particular h2 element using classList.add("poch-list").
+   }
+  });
 }
 
 

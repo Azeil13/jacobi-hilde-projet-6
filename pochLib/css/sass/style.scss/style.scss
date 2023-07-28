@@ -3,10 +3,10 @@
 }
 
 .title {
-  color: black;
+  color: 	#696969; /* text color DimGray*/
   font-size: 1.05em;
   text-align: center;
-  background-color: #C0C0C0; /* Set background color to silver */
+  background-color:#F5F5F5; /* Set background color to WhiteSmoke */
   font-family: 'Roboto', sans-serif;
   border-style: ridge;
   font-weight: normal;
@@ -15,9 +15,13 @@
  
 .btn_add {  /* adds class "btn_add" to addButton element (the button with the text  "Ajouter un livre".)*/ 
     /* Set buttonn with the text " Aouter un livre " background color to green */ 
+  border-style: none;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: #247256; /* Set background color to green */
   color: white; /* Set text color to white */
-  margin: auto;
+  margin:auto;
   display: block;
 }
 
@@ -29,19 +33,36 @@
 
 
 .btn_search {
+  border-style: none;
+  margin-top:25px;
+  padding: 25px;
   background-color:#247256; /* Set background color to green */
   color: white;
+  font-size: 100%;
 }
 
 
 .btn_cancel {/* adds class "btn_cancel"*/
-  background-color: red;
+  margin-top:25px;
+  border-style: none;
+  padding: 25px;
+  background-color: red; /* Set background color to red */
   color: white;
+  font-size: 100%;
 }
 
 
-.h2 {
-  color: black;
+.h2 { /* adds class h2 (with the text "Nouveau livre" inside it)  */
+  color:black;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.poch-list {/* adds class "poch-list" (with the text "Ma poch'liste" inside it) */
+  color:black;
   font-size: 1em;
   text-align: center;
   font-weight: bold;
