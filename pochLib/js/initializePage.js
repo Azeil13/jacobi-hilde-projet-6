@@ -20,6 +20,11 @@ function initializePage() {
    }
   });
 
+  const pochList = sessionStorage.getItem("pochList");
+  if (pochList && pochList.length > 0) {
+    displayPochList(); // Display registered books in the "Ma poch'liste" section
+  }
+
 }
 
 
@@ -32,9 +37,11 @@ function showSearchForm() {
   // This function will be called when the "Add book" button is clicked
     const contentDiv = document.getElementById("content");
   
+
     // Create the search form elements
     const form = document.createElement("form");
   
+
     const titleLabel = document.createElement("label");
     titleLabel.textContent = "Titre du livre ";
   
@@ -63,10 +70,24 @@ function showSearchForm() {
     cancelButton.textContent = "Annuler";
     cancelButton.classList.add("btn_cancel");  // add  class "btn_cancel" to addButton element (the button with the text  "Annuler".) 
   
-    
+   // hr (horizontal rule on the webpage) 
+   // inserts the cancelButton element ( that is the button with the text  "Annuler") before the hr element
+   const hr = document.querySelector("hr"); //This line selects the first <hr> element in the document and stores it in the variable hr
+   const parentNodeHr= hr.parentElement;  //  retrieves the parent element of the <hr> element and assigns it to the variable parentNodeHr.
+   parentNodeHr.insertBefore(cancelButton,hr);  // inserts thecancelButton element ( that is the button with the text  "Annuler") before the hr element within the parentNodeHr. => so cancelButton will be positioned just before the horizontal rule (<hr>).
+
+   // "poch-list" class
+   // With this modification, the class "poch-list" will be added to the h2 element with the text "Ma poch'liste" whenever the showsearchForm() function is called.
+   // Add the "poch-list" class to the h2 element with the text "Ma poch'liste"
+   const h2Elements = document.querySelectorAll("h2"); //use document.querySelectorAll("h2") to select all the h2 elements on the page
+   h2Elements.forEach((h2Element) => {     // we loop through these elements using forEach()
+    if (h2Element.textContent === "Ma poch'liste") {    //check if the textContent of each h2 element is equal to "Ma poch'liste"
+     h2Element.classList.add("poch-list");  // If a match is found, we add the "poch-list" class to that particular h2 element using classList.add("poch-list").
+    }
+   });
+
+
    
-
-
     // Add an event listener for the form submission
     form.addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent the form from being submitted
@@ -77,7 +98,7 @@ function showSearchForm() {
       if (title !== "" || author !== "") {
         performSearch(title, author); // Call the function to perform the search
       } else {
-        alert("Please enter a book title or author.");
+        alert("S'il vous plaît entrer un titre de livre ou un auteur.");
       }
     });
 
@@ -97,15 +118,24 @@ function showSearchForm() {
     form.appendChild(titleLabel);
     form.appendChild(authorLabel);
     form.appendChild(searchButton);
-    form.appendChild(document.createElement("br")); // Add a line break
+    form.appendChild(document.createElement("br")); // Add a line break 
     form.appendChild(cancelButton);  //Add line for appending the cancelButton to the form ( // add line,so add the button with text "Annuler" to the search form (It appends the cancelButton element as a child of the form element, which means that the "Annuler" button will be displayed inside the form alongside the other form elements such as the input fields and the "Rechercher" button.)
     
-    
-    
-    contentDiv.appendChild(form);
+    parentNodeHr.insertBefore(form,hr);  // inserts thecancelButton element ( that is the button with the text  "Annuler") before the hr element within the parentNodeHr. => so cancelButton will be positioned just before the horizontal rule (<hr>).
     
   }
   
+  // When clicking on the “Recherche” button, a block below the form should display “ résultats de recherche”
+  // Function to display the "résultats de recherche" header
+  function displaySearchResultsHeader() {
+  const contentDiv = document.getElementById("content");
+  const searchResultsHeader = document.createElement("h3");
+  console.log("toto");
+  searchResultsHeader.textContent = "résultats de recherche";
+  contentDiv.appendChild(searchResultsHeader);
+  }
+
+
   function performSearch(title, author) {
     const API_KEY = "AIzaSyAWiXReAnqz2GKCD2OyAd8KmNU15r93Jo4"; // Replace with my actual API key
     const searchQuery = `intitle:${encodeURIComponent(title)}+inauthor:${encodeURIComponent(author)}`;
@@ -123,29 +153,8 @@ function showSearchForm() {
       });
   }
   
-  function displaySearchResults(results) {
-    const contentDiv = document.getElementById("content");
-    const resultsDiv = document.createElement("div");
+
   
-    if (results && results.length > 0) {
-      results.forEach(result => {
-        const bookTitle = result.volumeInfo.title;
-        const bookAuthor = result.volumeInfo.authors ? result.volumeInfo.authors.join(", ") : "Unknown Author";
-        const bookInfo = document.createElement("p");
-        bookInfo.textContent = `${bookTitle} by ${bookAuthor}`;
-        resultsDiv.appendChild(bookInfo);
-      });
-    } else {
-      resultsDiv.textContent = "No results found.";
-    }
-  
-    // Clear the existing content and display the search results
-    contentDiv.innerHTML = "";
-    contentDiv.appendChild(resultsDiv);
-  }
-
-
-
   // Function to display the search results
   //The displaySearchResults function is responsible for rendering the search results on the page. 
   //This function takes the results array as a parameter, which contains the search results obtained from the Google Books API. It iterates over each result and creates a container (bookContainer) for each book. Inside the container, it creates and appends the elements for the book's ID, title, author, bookmark icon, description, and image.
@@ -179,7 +188,12 @@ function showSearchForm() {
         const bookmarkIcon = document.createElement("span");
         bookmarkIcon.textContent = "Bookmark Icon"; // Replace with the actual bookmark icon element
         const bookmarkImage = document.createElement("img"); // Create an <img> element
-        bookmarkImage.src = "C:\\Users\\hilde\\OneDrive\\Desktop\\Openclassroom -Project 6\\pochLib\\asset\\images\\bookmark.png"; // Set the image source
+        // Defining the attributes of the <img> element of the bookmark
+        bookmarkImage.setAttribute('src','asset/images/bookmark.png');
+        bookmarkImage.setAttribute('alt', 'icon is a Bookmark');
+        bookmarkImage.id="bookmark";
+
+
         bookmarkIcon.appendChild(bookmarkImage); // Append the image element to the bookmarkIcon span
         bookmarkIcon.addEventListener("click", function() {
           const bookData = {
@@ -196,6 +210,12 @@ function showSearchForm() {
         
         const deleteIcon = document.createElement("span");
         deleteIcon.textContent = "Delete Icon"; // Replace with the actual delete icon element
+        const deleteIconImage = document.createElement("img"); // Create an <img> element
+        // Defining the attributes of the <img> element of the delete icon image so trash
+        deleteIconImage.setAttribute('src','asset/images/trash.png');
+        deleteIconImage.setAttribute('alt', 'trash can icon, to be able to delete a book from the list.');
+        deleteIconImage.id = "trashCanIcon";
+
         deleteIcon.addEventListener("click", function() {
         removeFromPochList(bookId);
         });
@@ -218,6 +238,7 @@ function showSearchForm() {
   
     // Clear the existing content and display the search results
     contentDiv.innerHTML = "";
+    displaySearchResultsHeader();
     contentDiv.appendChild(resultsDiv);
   }
 
@@ -228,18 +249,18 @@ function showSearchForm() {
 //(list of books to read). 
 //It takes the bookData object as a parameter, which contains the information of the book to be added.
 function addToPochList(bookData) {
-    const pochList = sessionStorage.getItem("pochList");
-    const pochListArray = pochList ? JSON.parse(pochList) : [];
-    const duplicateBook = pochListArray.find(book => book.id === bookData.id);
-  
-    if (duplicateBook) {
-      alert("Vous ne pouvez ajouter deux fois le même livre.");
-    } else {
-      pochListArray.push(bookData);
-      sessionStorage.setItem("pochList", JSON.stringify(pochListArray));
-      displayPochList();
-    }
+  const pochList = sessionStorage.getItem("pochList");
+  const pochListArray = pochList ? JSON.parse(pochList) : [];
+  const duplicateBook = pochListArray.find(book => book.id === bookData.id);
+
+  if (duplicateBook) {
+    alert("Vous ne pouvez ajouter deux fois le même livre.");
+  } else {
+    pochListArray.push(bookData);
+    sessionStorage.setItem("pochList", JSON.stringify(pochListArray));
+    displayPochList();
   }
+}
 
 
 
