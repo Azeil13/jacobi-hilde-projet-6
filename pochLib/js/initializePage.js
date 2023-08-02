@@ -19,6 +19,7 @@ function initializePage() {
      h2Element.classList.add("poch-list");  // If a match is found, we add the "poch-list" class to that particular h2 element using classList.add("poch-list").
    }
   });
+
 }
 
 
@@ -27,7 +28,7 @@ function showSearchForm() {
   const addButton = document.getElementById("buttonAddBook"); // get button by id with content "Ajouter un livre"
   addButton.remove();  // remove button with content " Ajouter un livre" from form
  
-  // Implement your code to show the search form here
+  // Implement code to show the search form here
   // This function will be called when the "Add book" button is clicked
     const contentDiv = document.getElementById("content");
   
@@ -62,10 +63,9 @@ function showSearchForm() {
     cancelButton.textContent = "Annuler";
     cancelButton.classList.add("btn_cancel");  // add  class "btn_cancel" to addButton element (the button with the text  "Annuler".) 
   
-
-
-  
     
+   
+
 
     // Add an event listener for the form submission
     form.addEventListener("submit", function(event) {
@@ -95,13 +95,15 @@ function showSearchForm() {
     
     // Add the form elements to the contentDiv
     form.appendChild(titleLabel);
-    form.appendChild(document.createElement("br")); // Add a line break between the title label “Titre du livre”and the author label “Auteur”
     form.appendChild(authorLabel);
-    form.appendChild(document.createElement("br")); // Add a line break between the title label “Auteur ”and the button with the text  “Auteur”
     form.appendChild(searchButton);
-    form.appendChild(document.createElement("br")); // Add a line break between the searchButton with the text "Rechercher" and the cancelButton with the text "Annuler"
+    form.appendChild(document.createElement("br")); // Add a line break
     form.appendChild(cancelButton);  //Add line for appending the cancelButton to the form ( // add line,so add the button with text "Annuler" to the search form (It appends the cancelButton element as a child of the form element, which means that the "Annuler" button will be displayed inside the form alongside the other form elements such as the input fields and the "Rechercher" button.)
+    
+    
+    
     contentDiv.appendChild(form);
+    
   }
   
   function performSearch(title, author) {
@@ -288,6 +290,7 @@ function displayPochList() {
 
 
   
+
 localStorage.setItem("1234FR","TOTO");
 // Call the initializePage function when the page is loaded
 document.addEventListener("DOMContentLoaded", initializePage);

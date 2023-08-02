@@ -30,8 +30,8 @@
 }
 
 .btn_search {
-  border-style: none;
   margin-top: 25px;
+  border-style: none;
   padding: 25px;
   background-color: #247256; /* Set background color to green */
   color: white;
@@ -41,7 +41,10 @@
 .btn_cancel { /* adds class "btn_cancel"*/
   margin-top: 25px;
   border-style: none;
-  padding: 25px;
+  padding-left: 40px;
+  padding-bottom: 25px;
+  padding-right: 35px;
+  padding-top: 25px;
   background-color: red; /* Set background color to red */
   color: white;
   font-size: 100%;
