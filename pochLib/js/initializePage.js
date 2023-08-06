@@ -173,6 +173,7 @@ function showSearchForm() {
         const bookContainer = document.createElement("div");
         bookContainer.classList.add("book-container");
   
+        // Create elements for book ID, title, author
         const bookIdElement = document.createElement("p");
         bookIdElement.textContent = `Identifiant: ${bookId}`;
         bookContainer.appendChild(bookIdElement);
@@ -180,7 +181,7 @@ function showSearchForm() {
         const bookTitleElement = document.createElement("p");
         bookTitleElement.textContent = `Titre: ${bookTitle}`;
         bookContainer.appendChild(bookTitleElement);
-  
+
         const bookAuthorElement = document.createElement("p");
         bookAuthorElement.textContent = `Auteur: ${bookAuthor}`;
         bookContainer.appendChild(bookAuthorElement);
@@ -205,6 +206,8 @@ function showSearchForm() {
           };
           addToPochList(bookData);
         });
+
+
         bookContainer.appendChild(bookmarkIcon);
   
         
@@ -226,16 +229,34 @@ function showSearchForm() {
         bookDescriptionElement.textContent = `Description: ${bookDescription}`;
         bookContainer.appendChild(bookDescriptionElement);
   
+        // Create the book image element
         const bookImageElement = document.createElement("img");
         bookImageElement.src = bookImage;
+
+        // If no image is present for a book, the image “unavailable.png”, downloadable 
+        //Check if the book image is "unavailable.png"
+        if (bookImage === "unavailable.png") {
+        bookImageElement.setAttribute('src', 'asset/images/unavailable.png');
+        bookImageElement.setAttribute('alt', 'Image: White background with black text "COMING SOON"');
+        bookImageElement.id = "unavailableBookImage";
+        } else {
+        bookImageElement.src = bookImage;
+        bookImageElement.alt = "Image not available for this book.";
+        }
+
+
+
+        // Append the book image element to the book container
         bookContainer.appendChild(bookImageElement);
-  
+        
+        // Append the book container to the resultsDiv
         resultsDiv.appendChild(bookContainer);
       });
     } else {
       resultsDiv.textContent = "Aucun livre n'a été trouvé.";
     }
   
+
     // Clear the existing content and display the search results
     contentDiv.innerHTML = "";
     displaySearchResultsHeader();
