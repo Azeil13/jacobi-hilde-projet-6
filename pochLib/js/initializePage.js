@@ -267,6 +267,8 @@ function showSearchForm() {
 
 
 // Function to add book to user's poch'list
+// The book must also be saved in a session, using the API SessionStorage.
+// https://developer.mozilla.org/fr/docs/Web/API/Window/sessionStorage
 //The function addToPochList(bookData) is responsible for adding a book to the user's poch'liste 
 //(list of books to read). 
 //It takes the bookData object as a parameter, which contains the information of the book to be added.
