@@ -20,6 +20,7 @@ function initializePage() {
    }
   });
 
+  
   const pochList = sessionStorage.getItem("pochList");
   if (pochList && pochList.length > 0) {
     displayPochList(); // Display registered books in the "Ma poch'liste" section
@@ -279,13 +280,13 @@ function addToPochList(bookData) {
   } else {
     pochListArray.push(bookData);
     sessionStorage.setItem("pochList", JSON.stringify(pochListArray));
-    displayPochList();
+    displayPochList();  // Display updated poch'liste after adding the book
   }
 }
 
 
 
-
+// Function to display the poch'liste (list of books to read)
 function displayPochList() {
     const pochList = sessionStorage.getItem("pochList");
     const contentDiv = document.getElementById("content");
@@ -297,6 +298,7 @@ function displayPochList() {
         const bookContainer = document.createElement("div");
         bookContainer.classList.add("book-container");
   
+        // Create elements for book ID, title, author, description, and image
         const bookIdElement = document.createElement("p");
         bookIdElement.textContent = `Identifiant: ${book.id}`;
         bookContainer.appendChild(bookIdElement);
@@ -333,6 +335,7 @@ function displayPochList() {
 
   
 
-localStorage.setItem("1234FR","TOTO");
+
+
 // Call the initializePage function when the page is loaded
 document.addEventListener("DOMContentLoaded", initializePage);
