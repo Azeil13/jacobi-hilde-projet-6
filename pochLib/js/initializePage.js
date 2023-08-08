@@ -311,7 +311,7 @@ function removeFromPochList(bookId) {
 //including ID, title, author, description, and image. 
 //It also provides a delete icon for each book to allow users to remove books from their reading list.
 function displayPochList() {
-    const pochList = sessionStorage.getItem("pochList");
+    const pochList = sessionStorage.getItem("pochList"); // Retrieve the user's reading list (poch'liste) from the session storage .This line gets the saved poch'liste (list of books) from the session storage
     const contentDiv = document.getElementById("content");
     const pochListDiv = document.createElement("div");
   

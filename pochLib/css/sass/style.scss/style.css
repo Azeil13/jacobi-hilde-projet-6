@@ -1,3 +1,9 @@
+/* 
+   SCSS Styles for Mobile-First Approach:
+   - The following styles are designed to cater to mobile devices.
+   - Buttons, labels, and containers are optimized for smaller screens.
+   - Styles are prioritized for mobile viewing experience.
+*/
 #logo {
   max-height: 114px;
 }
@@ -84,8 +90,20 @@ button.add-book {
     background-color: white;
   }
 }
+/* 
+   Media Queries for Desktop:
+   - Styles are adjusted for desktop screens using media queries.
+   - Only specific changes indicated in the wireframe are applied.
+   - The rest of the styles remain consistent with the mobile version.
+*/
 /* Media Query for low-resolution Tablets, iPads */
 @media (min-width: 481px) and (max-width: 767px) {
+  body {
+    background-color: white;
+  }
+  /* Media Query for Laptops and Desktops */
+}
+@media (min-width: 481px) and (max-width: 767px) and (min-width: 1025px) and (max-width: 1280px) {
   body {
     background-color: white;
   }

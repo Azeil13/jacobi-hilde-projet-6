@@ -1,3 +1,11 @@
+/* 
+   SCSS Styles for Mobile-First Approach:
+   - The following styles are designed to cater to mobile devices.
+   - Buttons, labels, and containers are optimized for smaller screens.
+   - Styles are prioritized for mobile viewing experience.
+*/
+
+
 #logo {
   max-height: 114px;
 }
@@ -12,7 +20,7 @@
   font-weight: normal;
 }
 
- 
+ // Button Styles for Adding a Book
 .btn_add {  /* adds class "btn_add" to addButton element (the button with the text  "Ajouter un livre".)*/ 
     /* Set buttonn with the text " Aouter un livre " background color to green */ 
   border-style: none;
@@ -25,6 +33,7 @@
   display: block;
 }
 
+// Input Styles for Search Form
 .input_search { /* adds class "input_search"*/
   width: 98%;
   box-sizing:border-box;
@@ -32,7 +41,7 @@
 }
 
 
-
+// Button Styles for Search and Cancel
 .btn_search {
   margin-top:25px;
   border-style: none;
@@ -95,11 +104,25 @@ body {
 }
 }
 
+/* 
+   Media Queries for Desktop:
+   - Styles are adjusted for desktop screens using media queries.
+   - Only specific changes indicated in the wireframe are applied.
+   - The rest of the styles remain consistent with the mobile version.
+*/
 
 /* Media Query for low-resolution Tablets, iPads */
 @media (min-width: 481px) and (max-width: 767px) {
 body {
   background-color: white;
+}
+
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px){
+  body {
+    background-color: white;
+  }
 }
  
 
