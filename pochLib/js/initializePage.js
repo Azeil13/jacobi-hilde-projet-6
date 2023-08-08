@@ -165,6 +165,9 @@ function showSearchForm() {
   function displaySearchResults(results) {
     const contentDiv = document.getElementById("content");
     const resultsDiv = document.createElement("div");
+    const resultsContainer = document.createElement("div");    // Create a container for the search results
+    resultsContainer.classList.add("results-grid");    // Add "results-grid" class to the results container
+
   
     if (results && results.length > 0) {
       results.forEach(result => {
@@ -176,6 +179,7 @@ function showSearchForm() {
   
         const bookContainer = document.createElement("div");
         bookContainer.classList.add("book-container");
+        bookContainer.classList.add("book-container", "book-item"); // Add "book-item" class 
   
         // Create elements for book ID, title, author
         const bookIdElement = document.createElement("p");
