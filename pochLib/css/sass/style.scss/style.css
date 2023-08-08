@@ -72,6 +72,16 @@
   font-family: "Roboto", sans-serif;
 }
 
+#content {
+  text-align: left; /* Align the content to the left */
+}
+
+h3 {
+  margin-top: 20px; /* Add some spacing at the top */
+  font-size: 1.5em; /* Increase font size for better visibility */
+  text-align: center; /* Center-align the header text */
+}
+
 .body {
   background-color: black;
   text-align: center;
@@ -101,10 +111,28 @@ button.add-book {
   body {
     background-color: white;
   }
+  #content {
+    text-align: left; /* Align the content to the left */
+  }
+  h3 {
+    margin-top: 20px; /* Add some spacing at the top */
+    font-size: 1.5em; /* Increase font size for better visibility */
+    text-align: center; /* Center-align the header text */
+  }
   /* Media Query for Laptops and Desktops */
 }
 @media (min-width: 481px) and (max-width: 767px) and (min-width: 1025px) and (max-width: 1280px) {
   body {
     background-color: white;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  #content {
+    text-align: left; /* Align the content to the left */
+  }
+  h3 {
+    margin-top: 20px; /* Add some spacing at the top */
+    font-size: 1.5em; /* Increase font size for better visibility */
+    text-align: center; /* Center-align the header text */
   }
 }/*# sourceMappingURL=style.css.map */
