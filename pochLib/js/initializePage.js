@@ -1,18 +1,21 @@
 // Function to initialize the page
 function initializePage() {
+  // Create and configure the "Ajouter un livre" button
   const addButton = document.createElement("button");
   addButton.id= "buttonAddBook";
   addButton.textContent = "Ajouter un livre";
   addButton.addEventListener("click", showSearchForm);
   addButton.classList.add("btn_add");  // adds CSS class "btn_add" to addButton element (the button with the text  "Ajouter un livre".) 
   
+  // Find the first <hr> element and its parent
   const hr = document.querySelector("hr"); //This line selects the first <hr> element in the document and stores it in the variable hr. The <hr> tag in HTML index.html file represents an horizontal rule on the webpage, used it for visual separation.
   const parentNodeHr= hr.parentElement;  //  retrieves the parent element of the <hr> element and assigns it to the variable parentNodeHr. 
+  // Insert the "Ajouter un livre" button before the <hr> element
   parentNodeHr.insertBefore(addButton,hr);  // inserts the addButton element ( that is the button with the text  "Ajouter un livre") before the hr element within the parentNodeHr. => so  addButton will be positioned just before the horizontal rule (<hr>).
 
 
   // With this modification, the class "poch-list" will be added to the h2 element with the text "Ma poch'liste" whenever the initializePage() function is called.
-   // Add the "poch-list" class to the h2 element with the text "Ma poch'liste"
+  // Add the "poch-list" class to the h2 element with the text "Ma poch'liste"
   const h2Elements = document.querySelectorAll("h2"); //use document.querySelectorAll("h2") to select all the h2 elements on the page
   h2Elements.forEach((h2Element) => {     // we loop through these elements using forEach()
    if (h2Element.textContent === "Ma poch'liste") {    //check if the textContent of each h2 element is equal to "Ma poch'liste"
@@ -312,6 +315,23 @@ function displayPochList() {
         const bookAuthorElement = document.createElement("p");
         bookAuthorElement.textContent = `Auteur: ${book.author}`;
         bookContainer.appendChild(bookAuthorElement);
+
+
+         // Create the delete icon
+         const deleteIcon = document.createElement("span");
+         deleteIcon.textContent = "Delete Icon"; // Replace with the actual delete icon element
+         const deleteIconImage = document.createElement("img"); // Create an <img> element
+         // Defining the attributes of the <img> element for the delete icon image (trash can)
+         deleteIconImage.setAttribute('src', 'asset/images/trash.png');
+         deleteIconImage.setAttribute('alt', 'trash can icon, to be able to delete a book from the list.');
+         deleteIconImage.id = "trashCanIcon";
+
+         deleteIcon.addEventListener("click", function() {
+             removeFromPochList(book.id);
+         });
+         deleteIcon.appendChild(deleteIconImage); // Append the image element to the deleteIcon span
+         bookContainer.appendChild(deleteIcon);
+
   
         const bookDescriptionElement = document.createElement("p");
         bookDescriptionElement.textContent = `Description: ${book.description}`;
