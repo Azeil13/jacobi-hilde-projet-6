@@ -291,7 +291,25 @@ function addToPochList(bookData) {
 
 
 
+// Function to remove book from user's poch'list
+//where a book can be removed from the reading list without affecting the search results display.
+function removeFromPochList(bookId) {
+  const pochList = sessionStorage.getItem("pochList");
+  const pochListArray = pochList ? JSON.parse(pochList) : [];
+
+  const updatedPochListArray = pochListArray.filter(book => book.id !== bookId);
+  sessionStorage.setItem("pochList", JSON.stringify(updatedPochListArray));
+
+  displayPochList(); // Display updated poch'liste after removing the book
+}
+
+
+
 // Function to display the poch'liste (list of books to read)
+//This function retrieves the user's reading list from session storage, 
+//iterates through the list, and displays each book's information, 
+//including ID, title, author, description, and image. 
+//It also provides a delete icon for each book to allow users to remove books from their reading list.
 function displayPochList() {
     const pochList = sessionStorage.getItem("pochList");
     const contentDiv = document.getElementById("content");
