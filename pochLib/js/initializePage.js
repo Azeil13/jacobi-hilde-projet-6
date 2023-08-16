@@ -195,7 +195,6 @@ function showSearchForm() {
         bookContainer.appendChild(bookAuthorElement);
   
         const bookmarkIcon = document.createElement("span");
-        bookmarkIcon.textContent = "Bookmark Icon"; // Replace with the actual bookmark icon element
         const bookmarkImage = document.createElement("img"); // Create an <img> element
         // Defining the attributes of the <img> element of the bookmark
         bookmarkImage.setAttribute('src','asset/images/bookmark.png');
@@ -220,7 +219,6 @@ function showSearchForm() {
   
         
         const deleteIcon = document.createElement("span");
-        deleteIcon.textContent = "Delete Icon"; // Replace with the actual delete icon element
         const deleteIconImage = document.createElement("img"); // Create an <img> element
         // Defining the attributes of the <img> element of the delete icon image so trash
         deleteIconImage.setAttribute('src','asset/images/trash.png');
