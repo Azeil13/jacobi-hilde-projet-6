@@ -114,7 +114,8 @@ color: white; /* Set text color to white */
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-gap: 50px;
+  gap: 50px;
   margin-top: 20px;
   background-color: grey;   /* Set the grey background color */
   padding: 20px;
@@ -125,6 +126,7 @@ color: white; /* Set text color to white */
 /* Styles for each book item in the grid */
 .book-item {
   background-color: white;
+  margin: 30px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -133,60 +135,45 @@ color: white; /* Set text color to white */
 
 
 
-/* Media Query for Mobile Devices */
+/* Media Query for Mobile Devices  ( grid has 1 columns )*/
 @media (max-width: 480px) {
-body {
-  background-color: white;
+  .results-grid {
+    // For Mobile - Set the grid to have 1 columns, where each column takes up the available space
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  body {
+  background-color: white;  
+  }
 }
+
+
+
+
+
+/* Media Query for low-resolution Tablets, iPads   ( grid has 2 columns )*/ 
+@media (min-width: 481px) and (max-width: 767px) {
+.results-grid {
+    // For Ipad - Set the grid to have 2 columns, where each column takes up the available space
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+
+}
+
 
 
 
 /* 
-   Media Queries for Desktop:
+   Media Queries for Desktop: ( grid has 3 columns )
    - Styles are adjusted for desktop screens using media queries.
    - Only specific changes indicated in the wireframe are applied.
    - The rest of the styles remain consistent with the mobile version.
 */
 
-/* Media Query for low-resolution Tablets, iPads */
-@media (min-width: 481px) and (max-width: 767px) {
-body {
-  background-color: white;
-}
-
-// Add styles for the "résultats de recherche" header
-#content {
-  text-align: left; /* Align the content to the left */
-}
-
-h3 {
-  margin-top: 20px; /* Add some spacing at the top */
-  font-size: 1.5em; /* Increase font size for better visibility */
-  text-align: center; /* Center-align the header text */
-}
-
-
-
-
-
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px){
-  body {
-    background-color: white;
+  .results-grid {
+    // For Desktop - Set the grid to have 3 columns, where each column takes up the available space
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-}
-
-// Add styles for the "résultats de recherche" header
-#content {
-  text-align: left; /* Align the content to the left */
-}
-
-h3 {
-  margin-top: 20px; /* Add some spacing at the top */
-  font-size: 1.5em; /* Increase font size for better visibility */
-  text-align: center; /* Center-align the header text */
-}
-
-
 }
