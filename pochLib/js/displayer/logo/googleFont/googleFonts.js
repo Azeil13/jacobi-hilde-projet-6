@@ -1,7 +1,3 @@
-
-
-
-
 // Création de l'élément <link>
 const fontLink = document.createElement('link');
 

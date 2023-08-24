@@ -96,13 +96,35 @@ button.add-book {
 
 /* Styles for each book item in the grid */
 .book-item {
-  display: grid;
   background-color: lightgray;
   margin: 30px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-color: black;
+}
+
+/*icon with the bookmark , at the top right  */
+.image_bookmark {
+  float: right;
+}
+
+/*image with the deleteIcon, at the top right  */
+.image_delete_icon {
+  float: right;
+}
+
+/*image with the book, center  */
+.image_book {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+element.style {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* Styles for the grid container */
@@ -117,7 +139,7 @@ button.add-book {
 /* Media Query for Mobile Devices  ( grid has 1 columns )*/
 @media (max-width: 480px) {
   .results-grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
   body {
     background-color: white;
@@ -126,7 +148,7 @@ button.add-book {
 /* Media Query for low-resolution Tablets, iPads   ( grid has 2 columns )*/
 @media (min-width: 481px) and (max-width: 767px) {
   .results-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
   }
 }
 /* 
@@ -138,6 +160,6 @@ button.add-book {
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
   .results-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }/*# sourceMappingURL=style.css.map */

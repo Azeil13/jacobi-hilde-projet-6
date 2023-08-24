@@ -164,7 +164,7 @@ function showSearchForm() {
   //This function takes the results array as a parameter, which contains the search results obtained from the Google Books API. It iterates over each result and creates a container (bookContainer) for each book. Inside the container, it creates and appends the elements for the book's ID, title, author, bookmark icon, description, and image.
   function displaySearchResults(results) {
     const contentDiv = document.getElementById("content");
-    const resultsDiv = document.createElement("div");
+    const resultsDiv = document.createElement("div");   // Create a div to hold the search results (creates a new HTML div element and assigns it to the variable resultsDiv.This line of code is creating an empty div element in memory, but it does not yet add the div to the actual webpage. => later in code manipulate this div element, add content to it, and then append it to the webpage's DOM (Document Object Model) to make it visible on the webpage.)
     const resultsContainer = document.createElement("div");    // Create a container for the search results
     resultsContainer.classList.add("results-grid");    // Add "results-grid" class to the results container
 
@@ -200,6 +200,7 @@ function showSearchForm() {
         bookmarkImage.setAttribute('src','asset/images/bookmark.png');
         bookmarkImage.setAttribute('alt', 'icon is a Bookmark');
         bookmarkImage.id="bookmark";
+        bookmarkImage. classList.add("image_bookmark");// adds CSS class "image_bookmark" to bookmarkImage  element (the icon with the bookmark)
 
 
         bookmarkIcon.appendChild(bookmarkImage); // Append the image element to the bookmarkIcon span
@@ -224,6 +225,7 @@ function showSearchForm() {
         deleteIconImage.setAttribute('src','asset/images/trash.png');
         deleteIconImage.setAttribute('alt', 'trash can icon, to be able to delete a book from the list.');
         deleteIconImage.id = "trashCanIcon";
+        deleteIconImage.classList.add("image_delete_icon"); // adds CSS class "image_delete_icon" to deleteIconImage  element (the image with the deleteIcon)
 
         deleteIcon.addEventListener("click", function() {
         removeFromPochList(bookId);
@@ -251,6 +253,7 @@ function showSearchForm() {
         }
 
 
+        bookImageElement.classList.add("image_book");// adds CSS class "image_book" to bookimage  element (the image with the book)
 
         // Append the book image element to the book container
         bookContainer.appendChild(bookImageElement);
