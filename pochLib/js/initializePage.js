@@ -351,6 +351,8 @@ function displayPochList() {
          deleteIcon.addEventListener("click", function() {
              removeFromPochList(book.id);
          });
+
+         deleteIconImage.classList.add("icon_delete");// adds CSS class "icon_delete" to deleteicon image (the image with the icon delete)
          deleteIcon.appendChild(deleteIconImage); // Append the image element to the deleteIcon span
          bookContainer.appendChild(deleteIcon);
 
@@ -361,6 +363,7 @@ function displayPochList() {
   
         const bookImageElement = document.createElement("img");
         bookImageElement.src = book.image;
+        bookImageElement.classList.add("image_book_PochList");// adds CSS class "image_book_PochList" to bookimage  element (the image with the book added at the pochlist )
         bookContainer.appendChild(bookImageElement);
   
         pochListDiv.appendChild(bookContainer);
