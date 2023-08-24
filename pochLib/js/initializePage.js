@@ -342,7 +342,6 @@ function displayPochList() {
 
          // Create the delete icon
          const deleteIcon = document.createElement("span");
-         deleteIcon.textContent = "Delete Icon"; // Replace with the actual delete icon element
          const deleteIconImage = document.createElement("img"); // Create an <img> element
          // Defining the attributes of the <img> element for the delete icon image (trash can)
          deleteIconImage.setAttribute('src', 'asset/images/trash.png');
