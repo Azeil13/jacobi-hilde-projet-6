@@ -166,7 +166,7 @@ function showSearchForm() {
     const contentDiv = document.getElementById("content");
     const resultsDiv = document.createElement("div");   // Create a div to hold the search results (creates a new HTML div element and assigns it to the variable resultsDiv.This line of code is creating an empty div element in memory, but it does not yet add the div to the actual webpage. => later in code manipulate this div element, add content to it, and then append it to the webpage's DOM (Document Object Model) to make it visible on the webpage.)
     const resultsContainer = document.createElement("div");    // Create a container for the search results
-    resultsContainer.classList.add("results-grid");    // Add "results-grid" class to the results container
+    resultsDiv.classList.add("results-grid");    // Add "results-grid" class to the results container
 
   
     if (results && results.length > 0) {
@@ -275,6 +275,22 @@ function showSearchForm() {
 
 
 
+//The list of books selected by the user should be displayed under the function displaySearchResults(results)
+// When clicking on the Bookmark icon , a block below the form should display “ pochListe”
+  // Function to display the "poch’liste" header
+  function displayPochListResultsHeader() {
+    const contentDiv = document.getElementById("content");
+    const searchResultsHeader = document.createElement("h4");
+    console.log("tototEST");
+    searchResultsHeader.textContent = "pochListe";
+    contentDiv.appendChild(searchResultsHeader);
+    }
+  
+
+
+
+
+
 // Function to add book to user's poch'list
 // The book must also be saved in a session, using the API SessionStorage.
 // https://developer.mozilla.org/fr/docs/Web/API/Window/sessionStorage
@@ -318,7 +334,7 @@ function removeFromPochList(bookId) {
 //It also provides a delete icon for each book to allow users to remove books from their reading list.
 function displayPochList() {
     const pochList = sessionStorage.getItem("pochList"); // Retrieve the user's reading list (poch'liste) from the session storage .This line gets the saved poch'liste (list of books) from the session storage
-    const contentDiv = document.getElementById("content");
+    const contentDiv = document.getElementById("mySection");
     const pochListDiv = document.createElement("div");
   
     if (pochList && pochList.length > 0) {
@@ -367,21 +383,35 @@ function displayPochList() {
         bookImageElement.classList.add("image_book_PochList");// adds CSS class "image_book_PochList" to bookimage  element (the image with the book added at the pochlist )
         bookContainer.appendChild(bookImageElement);
   
-        pochListDiv.appendChild(bookContainer);
+        contentDiv.appendChild(bookContainer);
       });
     } else {
-      pochListDiv.textContent = "La poch'liste est vide.";
+      contentDiv.textContent = "La poch'liste est vide.";
     }
   
-    // Clear the existing content and display the poch'liste
-    contentDiv.innerHTML = "";
-    contentDiv.appendChild(pochListDiv);
+    
   }
 
   
 
 
   
+//CREATE section  element PochList + add div Id so easier to look for it + add in div
+//CREATE section element PochList
+// Create a new section element
+var sectionElement = document.createElement('section');
+
+// Create an H4 element for the title
+var titleElement = document.createElement('h4');
+titleElement.textContent = 'PochList';
+
+// You can set attributes and properties for the section element if needed
+sectionElement.id = 'mySection';
+sectionElement.className = 'section-class';
+
+// Append the title and section elements to an existing element in the DOM, like the body
+sectionElement.appendChild(titleElement);
+document.body.appendChild(sectionElement);
 
 
 

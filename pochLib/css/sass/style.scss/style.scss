@@ -146,14 +146,12 @@ color: white; /* Set text color to white */
   width: 25%;
 }
 
-element.style {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+
 
 /* Styles for the grid container */
 .results-grid {
   display: grid;
+  grid-template-columns: 1fr;
   margin-top: 20px;
   background-color: grey;   /* Set the grey background color */
   padding: 20px;
@@ -164,26 +162,8 @@ element.style {
 
 
 
-
-
-/* Media Query for Mobile Devices  ( grid has 1 columns )*/
-@media (max-width: 480px) {
-  .results-grid {
-    // For Mobile - Set the grid to have 1 columns, where each column takes up the available space
-    grid-template-columns: 1fr;
-  }
-
-  body {
-  background-color: white;  
-  }
-}
-
-
-
-
-
 /* Media Query for low-resolution Tablets, iPads   ( grid has 2 columns )*/ 
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 767px) {
 .results-grid {
     // For Ipad - Set the grid to have 2 columns, where each column takes up the available space
     grid-template-columns: 1fr 1fr;
@@ -191,7 +171,6 @@ element.style {
 }
 
 }
-
 
 
 
@@ -203,7 +182,7 @@ element.style {
 */
 
 /* Media Query for Laptops and Desktops */
-@media (min-width: 1025px) and (max-width: 1280px){
+@media (min-width: 1280px){
   .results-grid {
     // For Desktop - Set the grid to have 3 columns, where each column takes up the available space
     grid-template-columns: 1fr 1fr 1fr;
