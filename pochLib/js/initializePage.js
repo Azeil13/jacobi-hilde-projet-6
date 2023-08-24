@@ -181,14 +181,15 @@ function showSearchForm() {
         bookContainer.classList.add("book-container");
         bookContainer.classList.add("book-container", "book-item"); // Add "book-item" class 
   
-        // Create elements for book ID, title, author
-        const bookIdElement = document.createElement("p");
-        bookIdElement.textContent = `Identifiant: ${bookId}`;
-        bookContainer.appendChild(bookIdElement);
-  
+        // Create elements for title,book ID, author
+        
         const bookTitleElement = document.createElement("p");
         bookTitleElement.textContent = `Titre: ${bookTitle}`;
         bookContainer.appendChild(bookTitleElement);
+
+        const bookIdElement = document.createElement("p");
+        bookIdElement.textContent = `Identifiant: ${bookId}`;
+        bookContainer.appendChild(bookIdElement);
 
         const bookAuthorElement = document.createElement("p");
         bookAuthorElement.textContent = `Auteur: ${bookAuthor}`;
