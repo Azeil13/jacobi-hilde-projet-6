@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
    SCSS Styles for Mobile-First Approach:
    - The following styles are designed to cater to mobile devices.
@@ -76,6 +77,7 @@
   text-align: left; /* Align the content to the left */
 }
 
+/* Styles for h3 element for centering the title "résultats de recherche" */
 h3 {
   margin-top: 20px; /* Add some spacing at the top */
   font-size: 1.5em; /* Increase font size for better visibility */
@@ -110,7 +112,7 @@ button.add-book {
 }
 
 /*image with the deleteIcon, at the top right  */
-.image_delete_icon {
+.icon_delete {
   float: right;
 }
 
@@ -138,6 +140,23 @@ button.add-book {
   background-color: grey; /* Set the grey background color */
   padding: 20px;
   border-radius: 10px;
+}
+
+/* Styles for the "poch-list" section */
+.poch-list-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
+  background-color: grey; /* Set the grey background color */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styles for h4 element for centering the title "PochList" */
+h4 {
+  margin-top: 20px; /* Add some spacing at the top */
+  font-size: 1.5em; /* Increase font size for better visibility */
+  text-align: center; /* Center-align the header text */
 }
 
 /* Media Query for low-resolution Tablets, iPads   ( grid has 2 columns )*/

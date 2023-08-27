@@ -405,9 +405,12 @@ var sectionElement = document.createElement('section');
 var titleElement = document.createElement('h4');
 titleElement.textContent = 'PochList';
 
-// You can set attributes and properties for the section element if needed
+// Set attributes and properties for the section element if needed
 sectionElement.id = 'mySection';
-sectionElement.className = 'section-class';
+sectionElement.className = 'section-class';  //Add "section-class" class to the <section> element.
+
+// Add a class to the section element   (test sunday 27 august  to add grid + add class)
+sectionElement.classList.add('poch-list-section'); // Add the "poch-list-section" class to the section
 
 // Append the title and section elements to an existing element in the DOM, like the body
 sectionElement.appendChild(titleElement);
