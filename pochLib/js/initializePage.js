@@ -182,27 +182,23 @@ function showSearchForm() {
         bookContainer.classList.add("book-container", "book-item"); // Add "book-item" class 
   
         // Create elements for title,book ID, author
+
+        // create div container for Title + bookmark icon
+        const containerTitleAndIcon = document.createElement("div");
+        containerTitleAndIcon.classList.add("container_title_bookmark"); // add container_title_bookmark class ( remove before to present coutenance just NOTE for me)
         
+        
+
         const bookTitleElement = document.createElement("p");
         bookTitleElement.textContent = `Titre: ${bookTitle}`;
-        bookContainer.appendChild(bookTitleElement);
-
-        const bookIdElement = document.createElement("p");
-        bookIdElement.textContent = `Identifiant: ${bookId}`;
-        bookContainer.appendChild(bookIdElement);
-
-        const bookAuthorElement = document.createElement("p");
-        bookAuthorElement.textContent = `Auteur: ${bookAuthor}`;
-        bookContainer.appendChild(bookAuthorElement);
-  
+        containerTitleAndIcon.appendChild(bookTitleElement); 
         const bookmarkIcon = document.createElement("span");
-        const bookmarkImage = document.createElement("img"); // Create an <img> element
-        // Defining the attributes of the <img> element of the bookmark
-        bookmarkImage.setAttribute('src','asset/images/bookmark.png');
-        bookmarkImage.setAttribute('alt', 'icon is a Bookmark');
-        bookmarkImage.id="bookmark";
-        bookmarkImage. classList.add("image_bookmark");// adds CSS class "image_bookmark" to bookmarkImage  element (the icon with the bookmark)
 
+        containerTitleAndIcon.appendChild(bookmarkIcon);
+        bookTitleElement.classList.add("item", "item-90"); // add 2 class "item", "item-90" for the Book Title element because will take 90% of the space in the line 
+        bookmarkIcon.classList.add("item", "item-10");// add 2 class "item", "item-10" for the icon bookmark because  because will take 10% of the space in the line 
+
+        
 
         bookmarkIcon.appendChild(bookmarkImage); // Append the image element to the bookmarkIcon span
         bookmarkIcon.addEventListener("click", function() {
@@ -216,6 +212,24 @@ function showSearchForm() {
           addToPochList(bookData);
         });
 
+        const bookIdElement = document.createElement("p");
+        bookIdElement.textContent = `Identifiant: ${bookId}`;
+        bookContainer.appendChild(bookIdElement);
+
+        const bookAuthorElement = document.createElement("p");
+        bookAuthorElement.textContent = `Auteur: ${bookAuthor}`;
+        bookContainer.appendChild(bookAuthorElement);
+  
+        
+        const bookmarkImage = document.createElement("img"); // Create an <img> element
+        // Defining the attributes of the <img> element of the bookmark
+        bookmarkImage.setAttribute('src','asset/images/bookmark.png');
+        bookmarkImage.setAttribute('alt', 'icon is a Bookmark');
+        bookmarkImage.id="bookmark";
+        bookmarkImage. classList.add("image_bookmark");// adds CSS class "image_bookmark" to bookmarkImage  element (the icon with the bookmark)
+
+
+        
 
         bookContainer.appendChild(bookmarkIcon);
   
@@ -409,7 +423,13 @@ titleElement.textContent = 'PochList';
 sectionElement.id = 'mySection';
 sectionElement.className = 'section-class';  //Add "section-class" class to the <section> element.
 
-// Add a class to the section element   (test sunday 27 august  to add grid + add class)
+// Find the existing "PochList" section (TEST for next session mentor for monday 28 august 2023 _ to add grid + add class)
+//var pochListSection = document.querySelector('h3.poch-list').closest('section');
+
+// Add a parent class to the "PochList" section (TEST for next session mentor for monday 28 august 2023 _ to add grid + add class)
+//pochListSection.classList.add('poch-list-parent');
+
+// Add a class to the section element   (TEST for next session mentor for monday 28 august 2023 _ to add grid + add class)
 sectionElement.classList.add('poch-list-section'); // Add the "poch-list-section" class to the section
 
 // Append the title and section elements to an existing element in the DOM, like the body

@@ -118,17 +118,37 @@ color: white; /* Set text color to white */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-color: black;
+  position: relative; /* Add this line to set the positioning context for the icons */
 }
 
 /*icon with the bookmark , at the top right  */
 .image_bookmark {
-  float: right;
+  position: absolute; /* Position the bookmark icon absolutely within the book-item */
+  top: 10px; /* Adjust the top position to desired spacing */
+  right: 10px; /* Position the icon at the top right */
 }
+
+/* title + icon bookmark div to move image to right top*/
+.container_title_bookmark {
+  display: flex;
+  justify-content: space-between;
+}
+.item{
+  border: 1px solid black;
+  padding: 10px;
+}
+.item-90 {
+  width: 90%;
+}
+.item-10 {
+  width: 10%;
+}
+
 
 
 /*image with the deleteIcon, at the top right  */
 .icon_delete{
-  float: right;
+ float: right;
 }
 
 /*image with the book, center  */
@@ -161,6 +181,16 @@ color: white; /* Set text color to white */
 
 /* Styles for the "poch-list" section */
 .poch-list-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 20px;
+  background-color: grey;   /* Set the grey background color */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styles for the "poch-list" section */     /*(TEST for next session mentor for monday 28 august 2023 _ to add grid + add class)*/ 
+.poch-list-parent {
   display: grid;
   grid-template-columns: 1fr;
   margin-top: 20px;
